@@ -1,0 +1,55 @@
+#include<iostream>
+#include<string>
+using namespace std;
+class bill{
+    private:
+    string name;
+    int unit;
+    int amount;
+    public:
+
+   
+    void charges(int unit){
+        
+        
+        if(this->unit<=100){
+            this->amount=this->unit*0.60;
+            }
+        else if(this->unit<=200){
+            this->amount=60+(this->unit-100 )  *0.80;
+               }
+        else{
+            this->amount=60+160+(this->unit-300)*0.90;
+
+        }
+        if(this->amount>300){
+            this->amount =this->amount+50;
+            this->amount=this->amount+this->amount*0.15;
+        }
+        
+
+
+
+    }
+    void getdetail(string name,int unit){
+        this->name=name;
+        this->unit=unit;
+        charges(this->unit);
+
+    }
+    void display(){
+        cout<<"Name is "<<name<<endl;
+        cout<<"Unit is"<<unit<<endl;
+        cout<<"charges"<<amount<<endl;
+
+    }
+};
+    int main(){
+        bill d1;
+        d1.getdetail("daksh",340);
+        d1.display();
+
+
+
+
+    }
