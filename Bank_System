@@ -1,0 +1,55 @@
+#include<iostream>
+using namespace std;
+class bank{
+    private:
+    string name;
+    int accno;
+    string type;
+    int balance=0;
+    public:
+    void setvalue(string name,int accno,string type){
+    this->name=name;
+    this->accno=accno;
+    this->type=type;
+
+    
+    }
+    void deposit(int money){
+        balance=balance+money;
+    }
+    void withdraw(int money){
+        cout<<"Balance is"<<balance;
+        balance=balance-money;
+
+    }
+    void getvalue(){
+        cout<<"Name:"<<name<<endl;
+        cout<<"Accno:"<<accno<<endl;
+        cout<<"Type of account:"<<type<<endl;
+        cout<<"Balance:"<<balance<<endl;
+    }
+
+
+
+};
+int main(){
+    bank d;
+    string name;
+    int acc;
+    string type;
+    int balance;
+    
+        cout<<"Enter user name"<<endl;
+        cin>>name;
+        cout<<"Enter your acc no."<<endl;
+        cin>>acc;
+        cout<<"Enter type of account"<<endl;
+        cin>>type;
+        
+        d.setvalue(name,acc,type);
+        d.withdraw(100)
+        d.getvalue();
+        
+        
+    
+}
