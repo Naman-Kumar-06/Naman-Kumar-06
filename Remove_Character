@@ -1,0 +1,28 @@
+// Remove the repeating character
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+string removeCharacter(const string &input, char toRemove) {
+    string result;
+    for (int i = 0; i < input.length(); i++) {
+        if (input[i] != toRemove) {
+            result += input[i];
+        }
+    }
+    return result;
+}
+
+int main() {
+    string input = "computer science is the future";
+    char toRemove = 't';
+
+    string output = removeCharacter(input, toRemove);
+
+    cout << "Original String: " << input << endl;
+    cout << "Updated String: " << output << endl;
+
+    return 0;
+}
